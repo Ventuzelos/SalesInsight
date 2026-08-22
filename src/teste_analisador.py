@@ -1,0 +1,38 @@
+import pandas as pd
+
+from analisador_vendas import AnalisadorVendas
+
+
+dados = pd.read_csv("data/vendas.csv")
+
+analisador = AnalisadorVendas(dados)
+
+analisador.limpar_dados()
+
+print("Total faturado:")
+print(f"{analisador.total_faturado():.2f} €")
+
+print("\nProduto mais vendido:")
+print(
+    f"{analisador.produto_mais_vendido()} - "
+    f"{analisador.quantidade_produto_mais_vendido()} unidades"
+)
+
+print("\nTop 5 produtos:")
+print(analisador.top_5_produtos())
+
+print("\nFaturação por categoria:")
+print(analisador.faturacao_por_categoria())
+
+print("\nQuantidade por categoria:")
+print(analisador.quantidade_por_categoria())
+
+print("\nFaturação por data:")
+print(analisador.faturacao_por_data())
+
+
+print("\nA apresentar gráfico...")
+analisador.grafico_top_5()
+
+print("\nA apresentar evolução da faturação...")
+analisador.grafico_faturacao_por_data()

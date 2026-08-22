@@ -1,0 +1,43 @@
+Data,Produto,Categoria,Quantidade,Preco
+2026-05-01,Portatil X,Eletronica,2,850.00
+2026-05-01,Rato sem fios,Eletronica,5,25.50
+2026-05-01,Lapis de Carvao,Papelaria,20,0.50
+2026-05-02,Caderno A4,Papelaria,10,3.20
+2026-05-02,Caneta Azul,Papelaria,50,0.80
+2026-05-02,Cabo HDMI,Eletronica,3,10.00
+2026-05-03,Mochila Escolar,Acessorios,3,45.00
+2026-05-03,Portatil X,Eletronica,1,850.00
+2026-05-03,Marcador Preto,Papelaria,15,1.50
+2026-05-04,Monitor 24,Eletronica,2,150.00
+2026-05-04,Caderno A4,Papelaria,-5,3.20
+2026-05-04,Estojo Simples,Acessorios,5,8.00
+2026-05-05,Teclado Mecanico,Eletronica,4,65.00
+2026-05-05,Caneta Azul,Papelaria,20,0.00
+2026-05-05,Dossier,Papelaria,8,4.00
+2026-05-06,Garrafa de Agua,Acessorios,15,12.50
+2026-05-06,Mochila Escolar,Acessorios,2,45.00
+2026-05-06,WebCam 1080p,Eletronica,2,35.00
+2026-05-07,Rato sem fios,Eletronica,10,25.50
+2026-05-07,Monitor 24,Eletronica,1,150.00
+2026-05-07,Bloco de Notas,Papelaria,12,2.00
+2026-05-08,Disco Externo 1TB,Eletronica,3,60.00
+2026-05-08,Caneta Azul,Papelaria,-2,0.80
+2026-05-08,Chapeu de Chuva,Acessorios,4,15.00
+2026-05-09,Portatil X,Eletronica,1,850.00
+2026-05-09,Caderno A4,Papelaria,8,3.20
+2026-05-09,Garrafa de Agua,Acessorios,5,12.50
+2026-05-10,Cabo HDMI,Eletronica,10,10.00
+2026-05-10,Estojo Simples,Acessorios,3,0.00
+2026-05-10,Lapis de Carvao,Papelaria,30,0.50
+2026-05-11,Teclado Mecanico,Eletronica,2,65.00
+2026-05-11,Marcador Preto,Papelaria,10,1.50
+2026-05-11,Mochila Escolar,Acessorios,1,45.00
+2026-05-12,Monitor 24,Eletronica,3,150.00
+2026-05-12,Rato sem fios,Eletronica,-1,25.50
+2026-05-12,Dossier,Papelaria,6,4.00
+2026-05-13,WebCam 1080p,Eletronica,4,35.00
+2026-05-13,Bloco de Notas,Papelaria,25,2.00
+2026-05-13,Chapeu de Chuva,Acessorios,2,15.00
+2026-05-14,Portatil X,Eletronica,2,850.00
+2026-05-14,Caneta Azul,Papelaria,40,0.80
+2026-05-14,Disco Externo 1TB,Eletronica,1,60.00

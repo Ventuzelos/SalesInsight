@@ -1,0 +1,22 @@
+Nome,Categoria,Quantidade,Preco,Taxa_IVA
+Macas,Comida,50,0.50,0.06
+Arroz 1kg,Comida,20,1.20,0.06
+Cabo USB,Eletronica,30,5.00,0.23
+T-shirt Branca,Roupa,15,10.00,0.23
+Caderno,Papelaria,40,2.50,0.23
+Auriculares,Eletronica,10,20.00,0.23
+Agua 1.5L,Comida,24,0.60,0.06
+Leite 1L,Comida,36,0.90,0.06
+Pao de Forma,Comida,15,1.50,0.06
+Azeite 750ml,Comida,12,7.50,0.06
+Bolachas,Comida,45,1.10,0.06
+Carregador USB-C,Eletronica,25,15.00,0.23
+Powerbank 10000mAh,Eletronica,8,25.00,0.23
+Pilhas AA (Pack 4),Eletronica,40,4.00,0.23
+Rato sem fios,Eletronica,12,25.50,0.23
+Pen Drive 32GB,Eletronica,20,8.00,0.23
+Calcas de Ganga,Roupa,10,35.00,0.23
+Casaco de Inverno,Roupa,5,45.00,0.23
+Meias (Par),Roupa,50,3.00,0.23
+Caneta Azul,Papelaria,100,0.80,0.23
+Borracha,Papelaria,60,0.50,0.23
