@@ -25,6 +25,39 @@ class AnalisadorVendas:
     def total_faturado(self):
         self._calcular_faturacao()
         return self.dados["Faturacao"].sum()
+    
+    def total_unidades_vendidas(self):
+        return self.dados["Quantidade"].sum()
+    
+    def ticket_medio(self):
+        self._calcular_faturacao()
+
+        return self.dados["Faturacao"].sum() / len(self.dados)
+
+    def produto_maior_faturacao(self):
+        self._calcular_faturacao()
+
+        faturacao_por_produto = (
+                self.dados
+                .groupby("Produto")["Faturacao"]
+                .sum()
+        )
+
+        return faturacao_por_produto.idxmax()
+
+
+    def valor_produto_maior_faturacao(self):
+        self._calcular_faturacao()
+
+        faturacao_por_produto = (
+            self.dados
+            .groupby("Produto")["Faturacao"]
+            .sum()
+        )
+
+        return faturacao_por_produto.max()
+    
+    
 
     def produto_mais_vendido(self):
         vendas_por_produto = (
@@ -157,3 +190,10 @@ class AnalisadorVendas:
 
         plt.show()
         plt.close()
+        
+
+
+
+
+
+

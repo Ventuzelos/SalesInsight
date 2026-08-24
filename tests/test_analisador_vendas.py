@@ -146,3 +146,23 @@ def test_faturacao_por_data():
     assert resultado[pd.Timestamp("2026-05-01")] == 200.0
     assert resultado[pd.Timestamp("2026-05-02")] == 70.0
     
+
+def test_total_unidades_vendidas():
+    analisador = criar_analisador()
+
+    assert analisador.total_unidades_vendidas() == 22
+    
+def test_ticket_medio():
+    analisador = criar_analisador()
+
+    assert analisador.ticket_medio() == 90.0
+    
+def test_produto_maior_faturacao():
+    analisador = criar_analisador()
+
+    assert analisador.produto_maior_faturacao() == "Produto A"
+    
+def test_valor_produto_maior_faturacao():
+    analisador = criar_analisador()
+
+    assert analisador.valor_produto_maior_faturacao() == 170.0
