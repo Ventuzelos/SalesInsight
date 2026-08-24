@@ -89,6 +89,38 @@ class AnalisadorVendas:
         plt.show()
         plt.close()
         
+    def top_5_produtos_por_faturacao(self):
+        self._calcular_faturacao()
+
+        return (
+            self.dados
+            .groupby("Produto")["Faturacao"]
+            .sum()
+            .sort_values(ascending=False)
+            .head(5)
+        )
+
+    def grafico_top_5_faturacao(self):
+        top_5 = self.top_5_produtos_por_faturacao()
+
+        plt.figure(figsize=(10, 6))
+
+        top_5.sort_values().plot(kind="barh")
+
+        plt.title("Top 5 Produtos por Faturação")
+        plt.xlabel("Faturação (€)")
+        plt.ylabel("Produto")
+
+        plt.tight_layout()
+
+        plt.savefig(
+            "outputs/graficos/top_5_produtos_faturacao.png",
+            dpi=300
+        )
+
+        plt.show()
+        plt.close()
+        
         
     def faturacao_por_data(self):
         self._calcular_faturacao()

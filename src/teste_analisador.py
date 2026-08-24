@@ -21,6 +21,9 @@ print(
 print("\nTop 5 produtos:")
 print(analisador.top_5_produtos())
 
+print("\nTop 5 produtos por faturação:")
+print(analisador.top_5_produtos_por_faturacao())
+
 print("\nFaturação por categoria:")
 print(analisador.faturacao_por_categoria())
 
@@ -33,6 +36,9 @@ print(analisador.faturacao_por_data())
 
 print("\nA apresentar gráfico...")
 analisador.grafico_top_5()
+
+print("\nA apresentar Top 5 por faturação...")
+analisador.grafico_top_5_faturacao()
 
 print("\nA apresentar evolução da faturação...")
 analisador.grafico_faturacao_por_data()
