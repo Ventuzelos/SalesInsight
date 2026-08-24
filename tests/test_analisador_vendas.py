@@ -166,3 +166,35 @@ def test_valor_produto_maior_faturacao():
     analisador = criar_analisador()
 
     assert analisador.valor_produto_maior_faturacao() == 170.0
+    
+def test_categoria_maior_faturacao():
+    analisador = criar_analisador()
+
+    resultado = analisador.categoria_maior_faturacao()
+
+    assert resultado == "Categoria 1"
+    
+
+def test_percentagem_faturacao_categoria():
+    analisador = criar_analisador()
+
+    resultado = analisador.percentagem_faturacao_categoria("Categoria 1")
+
+    assert resultado == (170 / 270) * 100
+    
+def test_categoria_maior_quantidade():
+    analisador = criar_analisador()
+
+    resultado = analisador.categoria_maior_quantidade()
+
+    assert resultado == "Categoria 1"
+    
+def test_gerar_insights():
+    analisador = criar_analisador()
+
+    insights = analisador.gerar_insights()
+
+    assert len(insights) == 3
+    assert "Categoria 1" in insights[0]
+    assert "Categoria 1" in insights[1]
+    assert "Produto A" in insights[2]

@@ -54,3 +54,8 @@ analisador.grafico_top_5_faturacao()
 
 print("\nA apresentar evolução da faturação...")
 analisador.grafico_faturacao_por_data()
+
+print("\nInsights de negócio:")
+
+for insight in analisador.gerar_insights():
+    print(f"- {insight}")

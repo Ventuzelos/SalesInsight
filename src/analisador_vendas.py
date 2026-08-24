@@ -192,7 +192,48 @@ class AnalisadorVendas:
         plt.close()
         
 
+    def categoria_maior_faturacao(self):
+        faturacao = self.faturacao_por_categoria()
 
+        return faturacao.idxmax()
+
+    def percentagem_faturacao_categoria(self, categoria):
+        faturacao = self.faturacao_por_categoria()
+
+        total = faturacao.sum()
+
+        return (faturacao[categoria] / total) * 100
+
+    def categoria_maior_quantidade(self):
+        quantidade = self.quantidade_por_categoria()
+
+        return quantidade.idxmax()
+    
+    
+    def gerar_insights(self):
+        categoria_faturacao = self.categoria_maior_faturacao()
+        percentagem_categoria = self.percentagem_faturacao_categoria(
+            categoria_faturacao
+        )
+
+        categoria_quantidade = self.categoria_maior_quantidade()
+        produto_faturacao = self.produto_maior_faturacao()
+        valor_produto = self.valor_produto_maior_faturacao()
+
+        return [
+            (
+                f"A categoria {categoria_faturacao} representa "
+                f"{percentagem_categoria:.1f}% da faturação total."
+            ),
+            (
+                f"A categoria {categoria_quantidade} apresenta "
+                f"o maior volume de unidades vendidas."
+            ),
+            (
+                f"O produto {produto_faturacao} apresenta a maior "
+                f"faturação individual, com {valor_produto:.2f} €."
+            )
+        ]
 
 
 
