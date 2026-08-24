@@ -111,3 +111,38 @@ def test_limpeza_remove_dados_invalidos():
 
     assert len(resultado) == 1
     assert resultado.iloc[0]["Produto"] == "Produto A"
+    
+    
+def test_quantidade_produto_mais_vendido():
+    analisador = criar_analisador()
+
+    resultado = analisador.quantidade_produto_mais_vendido()
+
+    assert resultado == 17
+    
+    
+def test_top_5_produtos_por_faturacao():
+    analisador = criar_analisador()
+
+    resultado = analisador.top_5_produtos_por_faturacao()
+
+    assert resultado["Produto A"] == 170.0
+    assert resultado["Produto B"] == 100.0
+    
+def test_quantidade_por_categoria():
+    analisador = criar_analisador()
+
+    resultado = analisador.quantidade_por_categoria()
+
+    assert resultado["Categoria 1"] == 17
+    assert resultado["Categoria 2"] == 5
+    
+
+def test_faturacao_por_data():
+    analisador = criar_analisador()
+
+    resultado = analisador.faturacao_por_data()
+
+    assert resultado[pd.Timestamp("2026-05-01")] == 200.0
+    assert resultado[pd.Timestamp("2026-05-02")] == 70.0
+    
