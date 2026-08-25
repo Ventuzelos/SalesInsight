@@ -105,13 +105,20 @@ class AnalisadorVendas:
 
         plt.figure(figsize=(10, 6))
 
-        top_5.plot(kind="bar")
+        ax = top_5.sort_values().plot(kind="barh")
 
         plt.title("Top 5 Produtos Mais Vendidos")
-        plt.xlabel("Produto")
-        plt.ylabel("Unidades Vendidas")
+        plt.xlabel("Unidades Vendidas")
+        plt.ylabel("Produto")
 
-        plt.xticks(rotation=45, ha="right")
+        for i, valor in enumerate(top_5.sort_values()):
+            ax.text(
+                valor + 1,
+                i,
+                str(valor),
+                va="center"
+            )
+
         plt.tight_layout()
 
         plt.savefig(
@@ -134,15 +141,23 @@ class AnalisadorVendas:
         )
 
     def grafico_top_5_faturacao(self):
-        top_5 = self.top_5_produtos_por_faturacao()
+        top_5 = self.top_5_produtos_por_faturacao().sort_values()
 
         plt.figure(figsize=(10, 6))
 
-        top_5.sort_values().plot(kind="barh")
+        ax = top_5.plot(kind="barh")
 
         plt.title("Top 5 Produtos por Faturação")
         plt.xlabel("Faturação (€)")
         plt.ylabel("Produto")
+
+        for i, valor in enumerate(top_5):
+            ax.text(
+                valor + 50,
+                i,
+                f"{valor:.2f} €",
+                va="center"
+            )
 
         plt.tight_layout()
 
@@ -153,7 +168,6 @@ class AnalisadorVendas:
 
         plt.show()
         plt.close()
-        
         
     def faturacao_por_data(self):
         self._calcular_faturacao()
@@ -170,17 +184,28 @@ class AnalisadorVendas:
 
         plt.figure(figsize=(10, 6))
 
-        faturacao.plot(
+        ax = faturacao.plot(
             kind="line",
-            marker="o"
+            marker="o",
+            linewidth=2
         )
 
-        plt.title("Evolução da Faturação")
+        plt.title("Evolução da Faturação ao Longo do Tempo")
         plt.xlabel("Data")
         plt.ylabel("Faturação (€)")
 
         plt.xticks(rotation=45, ha="right")
         plt.grid(True, alpha=0.3)
+
+        for data, valor in faturacao.items():
+            ax.annotate(
+                f"{valor:.0f} €",
+                (data, valor),
+                textcoords="offset points",
+                xytext=(0, 8),
+                ha="center"
+            )
+
         plt.tight_layout()
 
         plt.savefig(
@@ -191,6 +216,35 @@ class AnalisadorVendas:
         plt.show()
         plt.close()
         
+    
+    def grafico_faturacao_por_categoria(self):
+        faturacao = self.faturacao_por_categoria()
+
+        plt.figure(figsize=(10, 6))
+
+        ax = faturacao.sort_values().plot(kind="barh")
+
+        plt.title("Faturação por Categoria")
+        plt.xlabel("Faturação (€)")
+        plt.ylabel("Categoria")
+
+        for i, valor in enumerate(faturacao.sort_values()):
+            ax.text(
+                valor + 50,
+                i,
+                f"{valor:.2f} €",
+                va="center"
+            )
+
+        plt.tight_layout()
+
+        plt.savefig(
+            "outputs/graficos/faturacao_por_categoria.png",
+            dpi=300
+        )
+
+        plt.show()
+        plt.close()
 
     def categoria_maior_faturacao(self):
         faturacao = self.faturacao_por_categoria()
